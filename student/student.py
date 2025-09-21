@@ -4,6 +4,7 @@ class Student:
         self.name = name
         self.grades = []
 
+
     def add_grade(self, grade):
         # Method to add a grade (0 to100 only). Invalid grades should raise an error.
         if grade >= 0 and grade <= 100:
@@ -11,6 +12,7 @@ class Student:
         else:
             raise ValueError('Grade Must be between 0 and 100 inclusive')
     
+
     def average(self):
         # Method to calculate the average of grades. If no grades, return 0.
         if not self.grades:
@@ -28,6 +30,8 @@ if __name__ == '__main__':
     student_name = input('Enter the new student name: ')
     new_student = Student(student_name)
     print(f'Welcome {new_student.name}')
+
+    
     new_grade = input('Add grade to student: ')
     try:
         new_student.add_grade(int(new_grade))

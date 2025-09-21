@@ -7,7 +7,9 @@ class TestStudent(unittest.TestCase):
         self.student = Student('Taif')
 
     def test_create_student_object(self):
+
         # new_student = Student('Taif')
+
         self.assertEqual(self.student.name, 'Taif')
     
     def test_add_valid_grade(self):
@@ -19,6 +21,7 @@ class TestStudent(unittest.TestCase):
         self.assertIn(0, self.student.grades)
 
     def test_add_invalid_grade(self):
+        
         with self.assertRaises(ValueError):
             self.student.add_grade(101)
 
@@ -30,6 +33,7 @@ class TestStudent(unittest.TestCase):
 
     def test_average_no_grades(self):
         self.assertEqual(self.student.average(), 0)
+
 
     def test_average_with_grades(self):
         for grade in [20, 40, 60]:
